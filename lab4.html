@@ -9,8 +9,28 @@
     <script>
         window.alert("Welcome to My Store")
         var name;
+        var item;
+        var num;
+        now = new Date();
+        hour = now.getHours();
 
-        name = window.prompt("Please enter your name: ")
+        name = window.prompt("Please enter your name: ", "Jon")
+        item = window.prompt("Please state the type of item you are purchasing: ")
+        num = window.prompt("Please enter the number of items you are purchasing: ")
+
+        if (hour < 12) 
+        {
+            document.writeIn("<h1> Good Morning " + name)
+        } else if (hour < 18)
+        {
+            document.writeIn("<h1> Good Afternoon " + name)
+        } else
+        {
+            document.writeIn("<h1> Good Evening " + name)
+
+        }
+        document.write("Thank You for purchasing from my shop!")
+
     </script>
 </head>
 <body> 
