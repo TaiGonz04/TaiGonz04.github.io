@@ -2,9 +2,9 @@
 <html lang="en">
 
 <head>
-
+    <title>My Shop!</title>
     <script>
-        window.alert("Welcome to My Store");
+        window.alert("Welcome to My Store!");
         var name;
         var item;
         var num;
@@ -14,6 +14,11 @@
         name = window.prompt("Please enter your name: ", "Jon");
         item = window.prompt("Please state the type of item you are purchasing: ");
         num = window.prompt("Please enter the number of items you are purchasing: ");
+
+        var arrivalDate = new Date(now);
+        arrivalDate.setDate(now.getDate() + 7);
+
+        var arrivalDateString = arrivalDate.toLocaleDateString();
 
         var greet;
         if (hour < 12) 
@@ -27,15 +32,19 @@
             greet = ("<h1> Good Evening ") + name;
 
         }
-        var message1 = greet + "! Thank You for purchasing from my shop!";
+        var message1 = greet + ", thank you for purchasing from my shop!";
         document.write("<h1>" + message1 + "</h1>");
         var message2;
         if(num <= 99){
             message2 = "You have ordered " + num + " " + item + "'s!";
         }else{
-            message2 = "Your number of items is above our limit! Unable to process order!";
+            message2 = "Your number of items is above our limit. Unable to process order!";
         }
         document.write("<h2>" + message2 + "</h2>");
+        
+        var message3 = "Your order is expected to arrive on  " + arrivalDateString + " (UwU)";
+        document.write("<h2>" + message3 + "</h2>");
+
 
     </script>
 </head>
