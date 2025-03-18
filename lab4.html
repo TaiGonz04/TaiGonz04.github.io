@@ -1,36 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
-
-
 <head>
 
     <script>
-        window.alert("Welcome to My Store")
+        window.alert("Welcome to My Store");
         var name;
         var item;
         var num;
         now = new Date();
         hour = now.getHours();
 
-        name = window.prompt("Please enter your name: ", "Jon")
-        item = window.prompt("Please state the type of item you are purchasing: ")
-        num = window.prompt("Please enter the number of items you are purchasing: ")
+        name = window.prompt("Please enter your name: ", "Jon");
+        item = window.prompt("Please state the type of item you are purchasing: ");
+        num = window.prompt("Please enter the number of items you are purchasing: ");
 
+        var greet;
         if (hour < 12) 
         {
-            document.write("<h1> Good Morning " + name)
+            greet = ("<h1> Good Morning ") + name;
         } else if (hour < 18)
         {
-            document.write("<h1> Good Afternoon " + name)
+            greet = ("<h1> Good Afternoon ") + name;
         } else
         {
-            document.write("<h1> Good Evening " + name)
+            greet = ("<h1> Good Evening ") + name;
 
         }
-        document.write("Thank You for purchasing from my shop!")
-
+        var message = greet + name + (", Thank You for purchasing from my shop!");
+        document.write("<h1>" + message + "</h1>");
     </script>
 </head>
 <body> 
