@@ -16,9 +16,10 @@
             var submission = {};
             elemsArr1.forEach((element) => 
             {
-                //submission += element.name + ": " + element.value + "<br>";
+                submission += element.name + ": " + element.value + "<br>";
                 console.log("Element name: ", element.name, "Value: ", element.value);
-                submission[element.name] = element.value;
+                
+                 
             });
             document.getElementById("demo").innerHTML = submission;
         
