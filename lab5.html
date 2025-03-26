@@ -14,16 +14,17 @@
             var elements = document.getElementById("myForm").elements;
             var elemsArr1 = Array.from(elements);
             var submission = {};
-            elemsArr1.forEach((element) => 
+            //elemsArr1.forEach((element) => 
             {
-                submission += element.name + ": " + element.value + "<br>";
+                //submission += element.name + ": " + element.value + "<br>";
                 //console.log("Element name: ", element.name, "Value: ", element.value);
                 
                  
             });
-            document.getElementById("demo").innerHTML = submission;
+            //document.getElementById("demo").innerHTML = submission;
+
         
-            //elemsArr1.forEach((element) => console.log(element.name + " " + element.value));
+            elemsArr1.forEach((element) => console.log(element.name + " " + element.value));
         }
     </script>
 </head>
@@ -33,13 +34,13 @@
         <h1 style="color:rgb(37, 123, 0)">JS Registration Page</h1>   
     </div>
     <form id ="myForm">
-        First name:<input type="text" name="First" value="Daisy"><br>
+        First name:<input type="text" name="First Name" value="Daisy"><br>
         Last name:<input type="text" name="Last Name" value="Duck"><br>
         Date of Birth:<input type="text" name="Date of Birth" value="06/07/1940"><br>
         Email Address:<input type="text" name="Email" value="DDuck40@Disneymail.com"><br>
         Password:<input type="text" name="Password" value="Daisy+Donald4ever"><br>
     </form>
-    <button onclick="submitForm()">Submit</button>
+    <button onclick="submitForm();">Submit</button>
     <p>Click sumbit and try me!</p>
     <p id="demo"></p>
    
