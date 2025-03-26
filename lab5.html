@@ -7,15 +7,29 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
-
-
-
+    
+    <script>
+        function submitForm()
+        {
+            var elements = document.getElementById("myForm").elements;
+            var elemsArr1 = Array.from(elements);
+            var submission = {};
+            elemsArr1.forEach((element) => console.log(element.name + " " + element.value));
+        }
+    </script>
 </head>
+
 <body>
     <div class="jumbotron text-center">
-        <h1 style="color:rgb(37, 123, 0)">JS Registration Page</h1>
-        
+        <h1 style="color:rgb(37, 123, 0)">JS Registration Page</h1>   
     </div>
+    <form id ="myForm">
+        First name:<input type="text" name="fname" value="Donald"><br>
+        Last name:<input type="text" name="lname" value="Duck"><br>
+    </form>
+    <button onclick="submitForm()">Submit!</button>
+    <p>Click sumbit and try me!</p>
+    <p id="demo"></p>
+   
 </body>
 </html>
