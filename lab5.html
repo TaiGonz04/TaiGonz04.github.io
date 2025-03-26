@@ -14,17 +14,14 @@
             var elements = document.getElementById("myForm").elements;
             var elemsArr1 = Array.from(elements);
             var submission = {};
-            //elemsArr1.forEach((element) => 
+            elemsArr1.forEach((element) => 
             {
-                //submission += element.name + ": " + element.value + "<br>";
+                submission += element.name + ": " + element.value + "<br>";
                 //console.log("Element name: ", element.name, "Value: ", element.value);
                 
                  
             });
-            //document.getElementById("demo").innerHTML = submission;
-
-        
-            elemsArr1.forEach((element) => console.log(element.name + " " + element.value));
+            document.getElementById("demo").innerHTML = submission;
         }
     </script>
 </head>
@@ -40,7 +37,7 @@
         Email Address:<input type="text" name="Email" value="DDuck40@Disneymail.com"><br>
         Password:<input type="text" name="Password" value="Daisy+Donald4ever"><br>
     </form>
-    <button onclick="submitForm();">Submit</button>
+    <button onclick="submitForm();">Submit!</button>
     <p>Click sumbit and try me!</p>
     <p id="demo"></p>
    
