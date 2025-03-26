@@ -14,12 +14,12 @@
             var elements = document.getElementById("myForm").elements;
             var elemsArr1 = Array.from(elements);
             var submission = {};
-            elemsArr1.forEach((element) => {
-                submission += element.name + ": " + element.value + "<br>";
-            });
-            document.getElementById("demo").innerHTML = submission; // Display the result in <p id="demo">
+            //elemsArr1.forEach((element) => {
+            //    submission += element.name + ": " + element.value + "<br>";
+           // });
+           // document.getElementById("demo").innerHTML = submission;
         
-            //elemsArr1.forEach((element) => console.log(element.name + " " + element.value));
+            elemsArr1.forEach((element) => console.log(element.name + " " + element.value));
         }
     </script>
 </head>
