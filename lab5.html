@@ -8,8 +8,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>JS Registration Page</title>
-
-<script>
+    
+    <script>
     function submitForm(event){
         event.preventDefault();
 
@@ -27,44 +27,60 @@
         var specialCharacters = /[!?*$#@]/;
         if(!specialCharacters.test(password))
         {
-            document.getElementById("result").innerHTML = "<div class='alert alert-danger'>Password must contain at least one special character.</div>";
+            document.getElementById("result").innerHTML = "<div class='alert alert-danger'>Password must contain at least one special character ('!' or '?').</div>";
             return;
         }
         var hiddenPassword = "*".repeat(password.length);
+
+        var input =
+        {
+            firstname: firstname,
+            lastname: lastname,
+            email: email,
+            dateofbirth: dateofbirth,
+            password: hiddenPassword
+        };
+
+        document.getElementById("result").innerHTML = "<div class='alert alert success'>" + "<h2>Registration Success!</h2>" + "<br>" + input.firstname + " " + input.lastname
+            + "<p>Email: " + input.email + "</p>" +
+            "<p>Date of Birth: " + input.dateofbirth + "</p>" +
+            "<p>Password: " + input.password + "</p>" +
+            "</div>";
     }
+    </script>
 
-
-</script>
 </head>
+
 <body>
     <div class="jumbotron text-center">
         <h1 style="color:rgb(37, 123, 0)">JS Registration Page</h1>   
     </div>
-
-<form onsubmit="submitForm(event)">
-    <div>
-        <label for="fname">First Name:</label>
-        <input type="text" name="First Name: " id="fname" required>
-    </div>
-    <div>
-        <label for="lname">Last Name:</label>
-        <input type="text" name="Last Name: " id="lname" required>
-    </div>
-    <div>
-        <label for="Email">Email Address:</label>
-        <input type="email" name="Email Address: " id="email" required>
-    </div>
-    <div>
-        <label for="date">Date of Birth:</label>
-        <input type="date" name="Date of Birth: " id="date" required>
-    </div>
-    <div>
-        <label for="password">Password:</label>
-        <input type="password" name="Password: " id="pass" required>
-    </div>
-    <button type="submit">Submit!</button>
-</form>
-<div id="result"></div>
+    
+    <form onsubmit="submitForm(event)">
+        <div>
+            <label for="fname">First Name:</label>
+            <input type="text" name="First Name: " id="fname" required>
+        </div>
+        <div>
+            <label for="lname">Last Name:</label>
+            <input type="text" name="Last Name: " id="lname" required>
+        </div>
+        <div>
+            <label for="Email">Email Address:</label>
+            <input type="email" name="Email Address: " id="email" required>
+        </div>
+        <div>
+            <label for="date">Date of Birth:</label>
+            <input type="date" name="Date of Birth: " id="date" required>
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" name="Password: " id="pass" required>
+        </div>
+        <button type="submit">Submit!</button>
+    </form>
+    
+    <div id="result"></div>
 
 
 </body>
