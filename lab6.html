@@ -27,12 +27,11 @@ table, th, td {
         const factbody = document.getElementById("catFactTable").getElementsByTagName("tbody")[0];
         factbody.innerHTML = '';
         
-        if (myObj.imageUrl) {
-            document.getElementById("GarfieldPhoto").src = myObj.imageUrl;}
+        if (myObj.catPhoto) {
+            document.getElementById("GarfieldPhoto").src = myObj.catPhoto;}
         
     }
     document.getElementById("catbutton").addEventListener("click", grabfacts);
-   
 </script>
 </head>
 <body>
