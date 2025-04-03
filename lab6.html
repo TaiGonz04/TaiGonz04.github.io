@@ -22,7 +22,7 @@ tr:nth-child(even) {
 }
 </style>
 <script>
-    async function myFunction()
+    async function grabfacts()
     { 
         const url = "https://brianobruno.github.io/cats.json";
         const options = 
@@ -44,8 +44,6 @@ tr:nth-child(even) {
 </head>
 <body>
     <h1>CAT FACTS</h1>
-    <h2>Photo of a Cat</h2>
-    <img id="catPhoto" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Cat_August_2010-4.jpg/1200px-Cat_August_2010-4.jpg" alt="Cat Photo">
     <button id="catbutton">See Cat Facts!</button>
     <table id="tableOfData" style="width:100%">
         <tr>
@@ -69,7 +67,8 @@ tr:nth-child(even) {
             <td></td>
         </tr>
     </table>
-    
+    <h2>Photo of a Cat</h2>
+    <img id="catPhoto" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Cat_August_2010-4.jpg/1200px-Cat_August_2010-4.jpg" alt="Cat Photo">
 
 </body>
 </html>
