@@ -1,11 +1,72 @@
 <!DOCTYPE html5>
 <html lang="en">
 <head>
-<script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Consuming a REST API</title>
+<style>
+    table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
 
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+tr:nth-child(even) {
+  background-color: #dddddd;
+
+}
+</style>
+<script>
+    async function myFunction()
+    { 
+        const url = "https://brianobruno.github.io/cats.json";
+        const options = 
+        { 
+            method: 'GET',
+        };
+        const response = await fetch(url, options);
+        const result = await response.text();
+        const myObj = JSON.parse(result);
+
+        myObj.facts.sort(function(a, b){return a - b});
+        document.getElementById("tableOfData").innerHTML = myObj;
+        
+        document.getElementById("catbutton").addEventListener("click", grabfacts);
+    }
+    
+   
 </script>
 </head>
 <body>
+    <button id="catbutton">See Cat Facts!</button>
+    <table id="tableOfData" style="width:100%">
+        <tr>
+          <th>Fact ID</th>
+          <th>Facts</th> 
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    
 
 </body>
 </html>
