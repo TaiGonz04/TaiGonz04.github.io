@@ -5,20 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Consuming a REST API</title>
 <style>
-    table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
-
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
-tr:nth-child(even) {
-  background-color: #dddddd;
-
+table, th, td {
+  border: 1px solid black;
 }
 </style>
 <script>
@@ -34,7 +22,10 @@ tr:nth-child(even) {
         const myObj = JSON.parse(result);
 
         myObj.facts.sort(function(a, b){return a - b});
-        document.getElementById("tableOfData").innerHTML = myObj;
+        document.getElementById("catFactTable").innerHTML = myObj;
+
+        const factbody = document.getElementById("catFactTable").getElementsByTagName("tbody")[0];
+        factbody.innerHTML = '';
         
         document.getElementById("catbutton").addEventListener("click", grabfacts);
     }
@@ -45,27 +36,16 @@ tr:nth-child(even) {
 <body>
     <h1>CAT FACTS</h1>
     <button id="catbutton">See Cat Facts!</button>
-    <table id="tableOfData" style="width:100%">
-        <tr>
-          <th>Fact ID</th>
-          <th>Facts</th> 
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-        </tr>
+    <table id="catFactTable" style="width:100%">
+        <thead>
+            <tr>
+              <th>Fact ID</th>
+              <th>Facts</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
     </table>
     <h2>Photo of a Cat</h2>
     <img id="catPhoto" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Cat_August_2010-4.jpg/1200px-Cat_August_2010-4.jpg" alt="Cat Photo">
