@@ -1,55 +1,71 @@
-<!DOCTYPE html5>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Consuming a REST API</title>
-<style>
-table, th, td {
-  border: 1px solid black;
-}
-</style>
-<script>
-    async function grabfacts()
-    { 
-        const url = "https://brianobruno.github.io/cats.json";
-        const options = 
-        { 
-            method: 'GET',
-        };
-        const response = await fetch(url, options);
-        const result = await response.text();
-        const myObj = JSON.parse(result);
-
-        myObj.facts.sort(function(a, b){return a - b});
-        document.getElementById("catFactTable").innerHTML = myObj;
-
-        const factbody = document.getElementById("catFactTable").getElementsByTagName("tbody")[0];
-        factbody.innerHTML = '';
-        
-        if (myObj.catPhoto) {
-            document.getElementById("GarfieldPhoto").src = myObj.catPhoto;}
-        
-    }
-    document.getElementById("catbutton").addEventListener("click", grabfacts);
-</script>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
 </head>
+
 <body>
     <h1>CAT FACTS</h1>
     <button id="catbutton">See Cat Facts!</button>
+    
     <table id="catFactTable" style="width:100%">
         <thead>
             <tr>
-              <th>Fact ID</th>
-              <th>Facts</th>
+                <th>Fact ID</th>
+                <th>Facts</th>
             </tr>
         </thead>
         <tbody>
-
+        
         </tbody>
     </table>
+
     <h2>Photo of a Cat</h2>
     <img id="GarfieldPhoto" src="https://upload.wikimedia.org/wikipedia/en/thumb/b/bc/Garfield_the_Cat.svg/1200px-Garfield_the_Cat.svg.png" alt="A familiar cat">
 
+    <script>
+        async function grabfacts() { 
+            const url = "https://brianobruno.github.io/cats.json";
+                const response = await fetch(url);
+                const myObj = await response.json(); 
+
+
+                myObj.facts.sort(function(a, b) {
+                    return a.factId - b.factId;
+                });
+
+                
+                const factbody = document.getElementById("catFactTable").getElementsByTagName("tbody")[0];
+                factbody.innerHTML = '';
+
+                
+                myObj.facts.forEach(item => 
+                {
+                    const row = document.createElement("tr");
+                    const cell1 = document.createElement("td");
+                    cell1.textContent = item.factId; 
+                    row.appendChild(cell1);
+                    
+                    const cell2 = document.createElement("td");
+                    cell2.textContent = item.text; 
+                    row.appendChild(cell2);
+                    factbody.appendChild(row);
+                });
+                
+                if (myObj.catPhoto) {
+                    document.getElementById("GarfieldPhoto").src = myObj.catPhoto;
+                } else {
+                    console.log("ERROR! No photo available");
+                }
+        }
+        document.getElementById("catbutton").addEventListener("click", grabfacts);
+    </script>
 </body>
 </html>
