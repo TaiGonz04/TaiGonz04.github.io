@@ -49,18 +49,22 @@
                 {
                     const row = document.createElement("tr");
                     const cell1 = document.createElement("td");
+
                     cell1.textContent = item.factId; 
                     row.appendChild(cell1);
                     
                     const cell2 = document.createElement("td");
+
                     cell2.textContent = item.text; 
                     row.appendChild(cell2);
                     factbody.appendChild(row);
                 });
                 
-                if (myObj.catPhoto) {
+                if (myObj.catPhoto) 
+                {
                     document.getElementById("GarfieldPhoto").src = myObj.catPhoto;
-                } else {
+                } else 
+                {
                     console.log("ERROR! No photo available");
                 }
         }
