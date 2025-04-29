@@ -8,15 +8,28 @@
     <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>-->
+    <script>
+        const URL = "https://www.dnd5eapi.co/api/2014/"
+
+        async function makeAPICall() {
+            const result = await fetch(URL)
+            result.json().then(data => {console.log(data)
+
+            })
+        }
+
+        makeAPICall()
+    </script>
 
 </head>
 <body>
-    <div></div>
+    <!--<div></div>-->
 </body>
 <script>
+    /*
     fetch('https://www.dnd5eapi.co/api/2014/')
     .then(response => response.json())
-    .then(console.log)
+    .then(console.log) */
 </script>
 
 </html>
