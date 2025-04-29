@@ -2,34 +2,116 @@
 <html lang="en">
 <head>
     <title>Final Project</title>
+    <style>
+        .bg-1{
+            background-color: #610000;
+            color: #ffffff;
+        }
+        .bg-2 {
+            background-color: #474e5d; /* Dark Blue */
+            color: #ffffff;
+        }
+        .bg-3 {
+            background-color: #ffffff; /* White */
+            color: #555555;
+        }
+        .container-fluid {
+            padding-top: 70px;
+            padding-bottom: 70px;
+        }
+        .navbar {
+            padding-top: 15px;
+            padding-bottom: 15px;
+            border: 0;
+            border-radius: 0;
+            margin-bottom: 0;
+            font-size: 12px;
+            letter-spacing: 5px;
+        }
+        .navbar-nav li a:hover {
+            color: #1abc9c !important;
+        }
+        body {
+            font: 20px Montserrat, sans-serif;
+            line-height: 1.8;
+            color: #f5f6f7;
+        }
+        p {font-size: 16px;}
+        .margin {margin-bottom: 45px;}
+    </style>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script>
         const URL = "https://www.dnd5eapi.co/api/2014/classes"
 
         async function makeAPICall() {
             const result = await fetch(URL)
             result.json().then(data => {console.log(data)
-
             })
         }
-
         makeAPICall()
     </script>
-
 </head>
 <body>
-    <!--<div></div>-->
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">The World of D&D</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">WHO</a></li>
+                    <li><a href="#">WHAT</a></li>
+                    <li><a href="#">WHERE</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="jumbotron text-center" style="background-color: #ffffff">
+        <h1 style="color: #610000">THE WORLD OF DUNGEONS & DRAGONS</h1>
+        <p>...</p> 
+    </div>
+    <div class="container-fluid bg-1 text-center">
+        <h2>What exactly is Dungeons & Dragons?</h2><br>
+        <img src="https://dungeontheory.it/wp-content/uploads/2020/05/background-di-dungeons-and-dragons-5e.jpg"  class="img-circle" style="display:inline" alt="Stardust cookie">
+        <h3>Dungeons & Dragons is a...</h3>
+    </div>
+    <div class="container-fluid bg-2 text-center">
+        <h3>What Am I?</h3>
+        <p>Lorem ipsum..</p>
+        <a href="#" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-search"></span>Search</a>
+    </div>
+    <div class="container-fluid bg-3 text-center">
+        <h3>Where To Find Me?</h3>
+        <div class ="row">
+            <div class="col-sm-4">
+                <p>sksjnkjnsd...</p>
+                <img src ="https://unblast.com/wp-content/uploads/2021/01/Space-Background-Image-2.jpg" class="img-responsive" style="width:100%" alt="image">
+            </div>
+            <div class="col-sm-4">
+                <p>sksjnkjnsd...</p>
+                <img src ="https://unblast.com/wp-content/uploads/2021/01/Space-Background-Image-2.jpg" class="img-responsive" style="width:100%" alt="image">
+            </div>
+            <div class="col-sm-4">
+                <p>sksjnkjnsd...</p>
+                <img src ="https://unblast.com/wp-content/uploads/2021/01/Space-Background-Image-2.jpg" class="img-responsive" style="width:100%" alt="image">
+            </div>
+        </div>
+    </div>
+    <footer class="container-fluid bg-4 text-center">
+        <p>Bootstrap Theme Made By <a href="https://www.w3schools.com">www.w3schools.com</a></p>
+    </footer>
+
 </body>
-<script>
-    /*
-    fetch('https://www.dnd5eapi.co/api/2014/classes')
-    .then(response => response.json())
-    .then(console.log) */
-</script>
+
 
 </html>
