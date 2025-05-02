@@ -12,6 +12,17 @@
     <script>
         fetch("https://www.dnd5eapi.co/api/classes")
         .then(resource => resource.json())
+        .then(data => {
+            const choice = document.getElementById("classCho");
+            data.results.forEach(element => {
+                const char = document.createElement("char");
+                char.value = element.index;
+                char.textContent = element.name;
+                
+
+                
+            });
+        });
         
 
     </script>
@@ -20,10 +31,11 @@
 <body>
     <div class="container">
         <div class="form-group">
-            <label for="classSel">Choose your Avatar:</label>
+            <label for="classCho">Choose your Avatar:</label>
         </div>
         <button id="detailBut" class="btn btn-primary" type="button">But
     <div id="classDets"></div>
 </div>
+
 </body>
 </html>
