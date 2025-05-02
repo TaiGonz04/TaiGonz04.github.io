@@ -48,7 +48,7 @@
     <script>
         const URL = "https://www.dnd5eapi.co/api/2014/classes"
 
-        async function makeAPICall() {
+        async function makeAPICall() { //when you input a json call from the api specifically, take...for example proficiency.choice or options.name
             const result = await fetch(URL)
             result.json().then(data => {console.log(data)
             })
@@ -71,7 +71,6 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#">CHARACTER BUILDER</a></li>
                     <li><a href="#">CHARACTER DETAILS</a></li>
-                    <li><a href="#">WHERE</a></li>
                 </ul>
             </div>
         </div>
@@ -83,12 +82,12 @@
     <div class="container-fluid bg-1 text-center">
         <h2>Who will YOU choose to battle?</h2><br>
         <img src="https://dungeontheory.it/wp-content/uploads/2020/05/background-di-dungeons-and-dragons-5e.jpg"  class="img-rounded" style="display:inline" alt="DND image">
-        <h3>What type of character will you be in the world of D&D? Will you be a half-Elf bard? A Gnome Rogue? A half-Orc Paladin? The possibilites are ENDLESS! </h3>
+        <h3>What type of character will you be in the World of D&D? Will you be a half-Elf bard? A Gnome Rogue? A half-Orc Paladin? The possibilites are ENDLESS! </h3>
     </div>
     <div class="container-fluid bg-2 text-center" style="background-color: #F07141">
         <h3>Are you ready to Build Your Own Character!</h3>
         <p>* * *</p>
-        <a href="#" class="btn btn-default btn-lg">I'm Ready!</a>
+        <a onclick="makeAPICall()" class="btn btn-default btn-lg">I'm Ready!</a>
     </div>
     <div class="container-fluid bg-3 text-center">
         <h3>ENDLESS</h3>
