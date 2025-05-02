@@ -19,12 +19,13 @@
                 char.value = element.index;
                 char.textContent = element.name;
                 
-
-                
             });
         });
-        
-
+        document.getElementById("detailBut").addEventListener("click", function() {
+            const cC = document.getElementById("classCho").value
+            
+            window.location.href = "cD.html?class=" + cC;
+        });
     </script>
 
 </head>
