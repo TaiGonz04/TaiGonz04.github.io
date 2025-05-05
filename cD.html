@@ -15,10 +15,16 @@
 
        if(!cIndex) 
        {
-        
-
-
-       }
+        document.getElementById("classD").innerHTML = "<p>Nothing Selected<p>";
+        } else {
+            fetch("https://www.dnd5eapi.co/api/classes/" + cIndex)
+            .then(function(classes) {
+                return classes.json();
+            })
+            .then(function(data) {
+                
+            })
+        }
     </script>
 
 </head>
