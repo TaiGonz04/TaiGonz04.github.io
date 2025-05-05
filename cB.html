@@ -12,7 +12,7 @@
     <script>
         window.onload = function() {
             fetch("https://www.dnd5eapi.co/api/classes")
-            .then(resource => resource.json())
+            .then(classes => classes.json())
             .then(data => {
                 const choice = document.getElementById("classCho");
                 data.results.forEach(element => {
@@ -41,9 +41,5 @@
         </div>
         <button id="detailBut" class="btn btn-primary" type="button"> Class Info!</button>
     </div>
-
-
-
-
 </body>
 </html>
