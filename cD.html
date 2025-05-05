@@ -2,7 +2,7 @@
 <html>
 <head>
 
-    <title>Dungeons and Dragons Character Detail Page</title>
+    <title>Character Detail Page</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,11 +13,20 @@
         const p = new URLSearchParams(window.location.search)
         const cIndex = p.get("class")
 
-       
+       if(!cIndex) 
+       {
+        
+
+
+       }
     </script>
 
 </head>
 <body>
+    <div class ="container">
+        <div id = "classD"></div>
+        <a href="https://taigonz04.github.io/cB.html" class="btn btn-default">Previous Page</a>
+    </div>
 
 </body>
 </html>
