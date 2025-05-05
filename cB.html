@@ -24,6 +24,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
+        function goToClass() {
+            const cC = document.getElementById("classCho").value;
+            window.location.href = "cD.html?class=" + cC;
+            }
         window.onload = function() {
             fetch("https://www.dnd5eapi.co/api/classes")
             .then(classes => classes.json())
@@ -35,13 +39,13 @@
                     option.textContent = element.name;
                     choice.appendChild(option);
                 });
-            });
-
-        document.getElementById("detailBut").addEventListener("click", function() {
+            
+        document.getElementById("detailBut").onclick("click", function() {
             const cC = document.getElementById("classCho").value;
             window.location.href = "cD.html?class=" + cC;
         });
-    }
+            });
+        }
     </script>
 
 </head>
@@ -67,7 +71,7 @@
             <select class="form-control" id="classCho"></select>
 
         </div>
-        <button id="detailBut" class="btn btn-primary" type="button"> Class Info!</button>
+        <button id="detailBut" class="btn btn-primary" type="button" onclick="goToClass()"> Class Info!</button>
         
     </div>
 </body>
