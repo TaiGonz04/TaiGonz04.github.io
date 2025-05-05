@@ -49,7 +49,7 @@
                     '<p><strong>Hit Die:</strong> d' + data.hit_die + '</p>' +
                     '<p><strong>Saving Throws:</strong>' + data.saving_throws.map(function(s) {return s.name; }).join(", ")
                     + '</p>' + '<p><strong>Proficiencies:</strong> ' + data.proficiencies.map(function(p) {return p.name; }).join(", ") + "</p>" 
-                    + '</div>' + '</div';
+                    + '</div>' + '</div>';
 
                     document.getElementById("classD").innerHTML = apiOutput;
             })
