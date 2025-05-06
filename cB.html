@@ -40,10 +40,14 @@
                     choice.appendChild(option);
                 });
             });
-        document.getElementById("detailBut").addEventListener("click", function() {
+        //document.getElementById("detailBut").addEventListener("click", function() {
+            //const cC = document.getElementById("classCho").value;
+           // window.location.href = "cD.html?class=" + cC;
+           // });
+           function goDetails() {
             const cC = document.getElementById("classCho").value;
             window.location.href = "cD.html?class=" + cC;
-            });
+           }
         }
     </script>
 
@@ -76,7 +80,7 @@
             <select class="form-control" id="classCho"></select>
             
         </div>
-        <button id="detailBut" class="btn btn-dark" type="button"> Class Info!</button>
+        <button id="detailBut" class="btn btn-dark" type="button" onclick="goDetails()"> Class Info!</button>
         
     </div>
 </body>
