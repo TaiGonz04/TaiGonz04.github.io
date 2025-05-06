@@ -28,6 +28,10 @@
     </style>
 
     <script>
+        function goDetails() {
+            const cC = document.getElementById("classCho").value;
+            window.location.href = "cD.html?class=" + cC;
+           }
         window.onload = function() {
             fetch("https://www.dnd5eapi.co/api/classes")
             .then(classes => classes.json())
@@ -40,14 +44,12 @@
                     choice.appendChild(option);
                 });
             });
+        
         //document.getElementById("detailBut").addEventListener("click", function() {
             //const cC = document.getElementById("classCho").value;
            // window.location.href = "cD.html?class=" + cC;
            // });
-           function goDetails() {
-            const cC = document.getElementById("classCho").value;
-            window.location.href = "cD.html?class=" + cC;
-           }
+           
         }
     </script>
 
